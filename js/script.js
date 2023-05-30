@@ -27,33 +27,29 @@ let arrayCorr= [];
 let arraySba= [];
 let numeroTot = 0;
 // faccio apparire i promt dopo 30 secondi dove l'utente inserisce i numeri e controllo quale sia sbagliato e quale sia giusto
-setTimeout(function(){
-    let num1_utente = parseInt(prompt('Inserisci il primo numero'));
-    let num2_utente = parseInt(prompt('Inserisci il secondo numero'));
-    let num3_utente = parseInt(prompt('Inserisci il terzo numero'));
-    let num4_utente = parseInt(prompt('Inserisci il quarto numero'));
-    let num5_utente = parseInt(prompt('Inserisci il quinto numero'));
-
-    arrayUtente = [num1_utente, num2_utente, num3_utente, num4_utente, num5_utente]
-    console.log(arrayUtente)
-    for(let i = 0; i<arrayRandom.length; i++){
-    let numbers = arrayRandom[i]
-    console.log(numbers)
-        if(arrayUtente.includes(numbers)){
-            arrayCorr.push(arrayUtente[i]);
-            num_tot++
-        }
-        else{
-            arraySba.push(arrayUtente[i]);
-            
-        }
-
+setTimeout(function() {
+    for (let i = 0; i < 5; i++) {
+        let num_utente = parseInt(prompt(`Inserisci il numero ${i + 1}`));
+        arrayUtente.push(num_utente);
     }
-// mostro il risultato con un alert
-    alert(`
-    Hai indovinato ${numeroTot}
-    I numeri che hai indovinato sono: ${arrayCorr}
-    I numeri che sbagliato sono: ${arraySba}
-    `)
 
+    console.log(arrayUtente);
+// confrontare i numeri inseriti dall'utente con i numeri casuali generati
+    for (let i = 0; i < arrayRandom.length; i++) {
+        let numbers = arrayRandom[i];
+
+        if (arrayUtente.includes(numbers)) {
+            arrayCorr.push(arrayUtente[i]);
+            numeroTot++;
+        } else {
+            arraySba.push(arrayUtente[i]);
+        }
+    }
+
+    // mostro il risultato con un alert
+    alert(`
+        Hai indovinato ${numeroTot} numeri.
+        I numeri che hai indovinato sono: ${arrayCorr}
+        I numeri che hai sbagliato sono: ${arraySba}
+    `);
 }, (second + 1) * 1000);
