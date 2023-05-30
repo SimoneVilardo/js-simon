@@ -2,8 +2,11 @@ PROBLEMA: Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 s
 
 SOLUZIONE :
 1.creo un array vuoto;
-    1.1 creo una funzione per popolare l'array con 5 casuali;
+    1.1 creo una funzione per popolare l'array con 5 numeri casuali;
 
-2.con la funzione setTimeout che dopo 30 secondi rimuove i numeri e creo i prompt per far si che l'utente possa inserire i numeri;
+2.con la funzione setTimeout dopo 30 secondi rimuovo i numeri ;
 
-3.
+3.con una seconda funzione setTimeout dopo 31 secondi creo  i promt dove l'utente può inserire i 5 numeri;
+    3.1 unisco il risultato in un array;
+    3.2con un ciclo for individuo i numeri corretti e quelli sbagliati;
+    3.3 con un alert mostro il risultato a schermo;
